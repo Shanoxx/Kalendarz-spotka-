@@ -1,0 +1,10 @@
+{% extends "rezerwacja_spotkan/base.html" %}
+{% block content %}
+  <p>Dodaj nowy temat:</p>
+
+  <form action="{% url 'rezerwacja_spotkan:new_topic'%}"method='post'>
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button name="submit">Dodaj temat</button>
+  </form>
+{% endblock content %}

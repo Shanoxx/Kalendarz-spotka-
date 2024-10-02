@@ -1,0 +1,18 @@
+{% extends "rezerwacja_spotkan/base.html" %}
+{% block content %}
+
+  <p>Temat: {{ topic.text }}</p>
+  <p>Wpisy:</p>
+
+  <ul>
+    {% for opis in opisy %}
+      <li>
+        <p>{{ opis.date_added|date:'d M Y H:i' }}</p>
+        <p>{{ opis.text|linebreaks }}</p>
+      </li>
+      {% empty %}
+        <li>Nie zostal dodany jeszcze zaden opis</li>
+      {% endfor %}
+  <ul>
+    
+{% endblock content %}

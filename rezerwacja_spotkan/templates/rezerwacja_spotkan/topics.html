@@ -1,0 +1,18 @@
+{% extends "rezerwacja_spotkan/base.html" %}
+{% block content %}
+
+  <p>Temat: {{ topic.text }}</p>
+  <p>Tematy</p>
+
+  <ul>
+    {% for topic in topics %}
+      <li>
+        <a href="{% url 'rezerwacja_spotkan:topic' topic.id %}">{{ topic.text }}</a>
+      </li>
+      {% empty %}
+        <li>Nie zostal dodany jeszcze zaden temat</li>
+      {% endfor %}
+  <ul>
+  <a href="{% url 'rezerwacja_spotkan:new_topic'%}">Dodaj nowy temat</a>
+    
+{% endblock content %}
