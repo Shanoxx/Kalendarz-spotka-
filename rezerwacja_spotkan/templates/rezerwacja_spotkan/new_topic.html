@@ -1,10 +1,11 @@
 {% extends "rezerwacja_spotkan/base.html" %}
+{% load django_bootstrap5 %}
 {% block content %}
   <p>Dodaj nowy temat:</p>
 
   <form action="{% url 'rezerwacja_spotkan:new_topic'%}"method='post'>
     {% csrf_token %}
-    {{ form.as_div }}
+    {% bootstrap_form form %}
     <button name="submit">Dodaj temat</button>
   </form>
 {% endblock content %}

@@ -33,6 +33,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #moje aplikacje
     'rezerwacja_spotkan',
+    'accounts',
+    #Inne aplikacje
+    'django_bootstrap5',
     #domyslne aplikacje
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -119,8 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "rezerwacja_spotkan/static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#Moje ustawienia
+LOGIN_REDIRECT_URL = 'rezerwacja_spotkan:index'
+LOGOUT_REDIRECT_URL = 'rezerwacja_spotkan:index'
+LOGIN_URL = 'accounts:login'

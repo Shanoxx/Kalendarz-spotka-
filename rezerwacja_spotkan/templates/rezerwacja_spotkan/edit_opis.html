@@ -1,0 +1,14 @@
+{% extends "rezerwacja_spotkan/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <p><a href="{% url 'rezerwacja_spotkan:topic' topic.id %}" class="btn btn-outline-success">Wróć</a>
+  <p>Edycja wpisu:</p>
+  <form action="{% url 'rezerwacja_spotkan:edit_opis' opis.id %}" method='post'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button button_type="submit" content="Zapisz zmiany" %}
+  </form>
+{% endblock content %}
+
+

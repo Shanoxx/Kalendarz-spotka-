@@ -1,18 +1,25 @@
-{% extends "rezerwacja_spotkan/base.html" %}
+{% extends 'rezerwacja_spotkan/base.html' %}
+
+{% block page_header %}
+  <h1>Tematy</h1>
+
+  <a href="{% url 'rezerwacja_spotkan:index' %}" class="btn btn-outline-success">Wróć</a>
+{% endblock page_header %}
+
+
 {% block content %}
 
-  <p>Temat: {{ topic.text }}</p>
-  <p>Tematy</p>
-
-  <ul>
+  <ul class="list-group border-bottom pb-2 mb-4">
     {% for topic in topics %}
-      <li>
-        <a href="{% url 'rezerwacja_spotkan:topic' topic.id %}">{{ topic.text }}</a>
+      <li class="list-group-item border-0">
+        <a href="{% url 'rezerwacja_spotkan:topic' topic.id %}">
+          {{ topic.text }}</a>
       </li>
-      {% empty %}
-        <li>Nie zostal dodany jeszcze zaden temat</li>
-      {% endfor %}
-  <ul>
-  <a href="{% url 'rezerwacja_spotkan:new_topic'%}">Dodaj nowy temat</a>
-    
+    {% empty %}
+      <li class="list-group-item border-0">Nie dodano jeszcze zadnego tematu</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'rezerwacja_spotkan:new_topic' %}">Dodaj nowy temat</a>
+
 {% endblock content %}

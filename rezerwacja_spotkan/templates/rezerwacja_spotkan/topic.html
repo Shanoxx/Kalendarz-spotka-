@@ -1,18 +1,29 @@
 {% extends "rezerwacja_spotkan/base.html" %}
+
+
+{% block page_header %}
+  <h1>{{ topic.text }}</h1>
+{% endblock page_header %}
+
 {% block content %}
 
-  <p>Temat: {{ topic.text }}</p>
-  <p>Wpisy:</p>
+  <p>
+    <a href="{% url 'rezerwacja_spotkan:new_opis' topic.id %}">Dodaj nowy opis</a>
+  </p>
 
-  <ul>
-    {% for opis in opisy %}
-      <li>
-        <p>{{ opis.date_added|date:'d M Y H:i' }}</p>
-        <p>{{ opis.text|linebreaks }}</p>
-      </li>
-      {% empty %}
-        <li>Nie zostal dodany jeszcze zaden opis</li>
-      {% endfor %}
-  <ul>
-    
+  {% for opis in opisy %}
+    <div class="card mb-3">
+      <!-- Card header with timestamp and edit link -->
+      <h4 class="card-header">
+        {{ opis.date_added|date:'M d, Y H:i' }}
+        <small><a href="{% url 'rezerwacja_spotkan:edit_opis' opis.id %}">
+          Edytuj</a></small>
+      </h4>
+      <!-- Card body with entry text -->
+      <div class="card-body">{{ opis.text|linebreaks }}</div>
+    </div>
+  {% empty %}
+    <p>Nie dodano jeszcze zadnego opisu</p>
+  {% endfor %}
+
 {% endblock content %}
