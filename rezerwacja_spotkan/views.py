@@ -55,12 +55,14 @@ def new_opis(request, topic_id):
     if request.method != 'POST':
         #Nie przekazano zadnych danych nalezy utorzyc pusty formularz
         form = EntryForm()
+
     else:
         #Przekazano dane za pomoca zadania POST, nalezy je przetworzyc
         form = EntryForm(data=request.POST)
         if form.is_valid():
             new_opis = form.save(commit=False)
             new_opis.topic = topic
+            new_opis.owner = request.user
             new_opis.save()
             return redirect('rezerwacja_spotkan:topic', topic_id=topic_id)
         

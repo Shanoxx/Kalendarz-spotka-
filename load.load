@@ -1,0 +1,6 @@
+LOAD DATABASE
+     from sqlite:///Users/lukaszgrot/Desktop/rezerwacja_spotkan/sqlite.db
+     into postgresql://lukaszgrot:0708-qpwoAA@localhost/rezerwacja_spotkan_lokal_postgres
+
+WITH data only;
+

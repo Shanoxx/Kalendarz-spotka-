@@ -1,0 +1,73 @@
+Aby stworzyć bezpieczną aplikację webową i wdrożyć ją na AWS, musisz przejść przez kilka kluczowych kroków. Oto przewodnik krok po kroku, który pomoże Ci zrozumieć, jak to zrobić oraz jakie umiejętności i wiedza będą Ci potrzebne.
+
+Krok 1: Zrozumienie podstaw AWS
+Rejestracja w AWS:
+
+Zarejestruj się na platformie AWS, jeśli jeszcze tego nie zrobiłeś.
+AWS Free Tier - korzystaj z bezpłatnego poziomu przez 12 miesięcy.
+Podstawowe usługi AWS:
+
+Zrozum podstawowe usługi AWS, takie jak EC2 (Elastic Compute Cloud), S3 (Simple Storage Service), RDS (Relational Database Service) i VPC (Virtual Private Cloud).
+Krok 2: Stworzenie aplikacji webowej
+Wybór technologii:
+
+Wybierz technologie, w których chcesz tworzyć aplikację (np. Node.js, Python, Ruby on Rails, PHP).
+Tworzenie aplikacji:
+
+Stwórz prostą aplikację webową (np. aplikację TODO, bloga, itp.) lokalnie.
+Upewnij się, że aplikacja działa na Twoim komputerze.
+Zarządzanie bazą danych:
+
+Jeśli Twoja aplikacja potrzebuje bazy danych, możesz użyć AWS RDS lub DynamoDB.
+Użyj SQL (MySQL, PostgreSQL) lub NoSQL (DynamoDB) w zależności od wymagań aplikacji.
+Krok 3: Wdrożenie aplikacji na AWS
+Tworzenie instancji EC2:
+
+Zaloguj się do konsoli AWS.
+Stwórz instancję EC2:
+Wybierz AMI (Amazon Machine Image) dla swojego systemu operacyjnego.
+Skonfiguruj instancję (typ instancji, VPC, itp.).
+Dokumentacja: Launch an EC2 Instance
+Konfiguracja grupy bezpieczeństwa:
+
+Stwórz grupę bezpieczeństwa, aby zarządzać dostępem do instancji EC2.
+Otwórz odpowiednie porty (np. 80 dla HTTP, 443 dla HTTPS).
+Dokumentacja: Security Groups
+Wdrożenie aplikacji:
+
+Skopiuj pliki aplikacji na instancję EC2 (np. za pomocą SCP lub SFTP).
+Zainstaluj wymagane oprogramowanie (np. Node.js, Nginx, itp.).
+Uruchom aplikację.
+Krok 4: Zabezpieczenie aplikacji
+IAM (Identity and Access Management):
+
+Stwórz role IAM i polityki, aby ograniczyć dostęp do zasobów AWS.
+Dokumentacja: IAM
+Konfiguracja AWS WAF:
+
+Skonfiguruj AWS WAF, aby chronić aplikację przed typowymi atakami (np. SQL Injection, XSS).
+Dokumentacja: AWS WAF
+AWS Shield:
+
+Użyj AWS Shield do ochrony przed atakami DDoS.
+Dokumentacja: AWS Shield
+Krok 5: Monitorowanie i utrzymanie
+AWS CloudWatch:
+
+Skonfiguruj AWS CloudWatch do monitorowania aplikacji i instancji EC2.
+Dokumentacja: AWS CloudWatch
+Regularne aktualizacje:
+
+Regularnie aktualizuj aplikację oraz system operacyjny instancji EC2.
+Monitoruj logi i reaguj na potencjalne zagrożenia.
+Krok 6: Dodatkowe zasoby
+Kursy online:
+
+AWS Training and Certification
+Coursera - AWS Fundamentals
+Dokumentacja i przewodniki:
+
+AWS Well-Architected Framework
+AWS Security Best Practices
+Podsumowanie
+Stworzenie i wdrożenie bezpiecznej aplikacji webowej na AWS wymaga zrozumienia zarówno technologii webowych, jak i specyfikacji zabezpieczeń w AWS. Upewnij się, że regularnie aktualizujesz swoją wiedzę i monitorujesz aplikację, aby zapewnić jej bezpieczeństwo.
