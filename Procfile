@@ -1,2 +1,2 @@
-web: gunicorn <rs_project>.wsgi
+web: gunicorn rs_project.wsgi
 
